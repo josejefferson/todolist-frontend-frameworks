@@ -1,0 +1,15 @@
+<h1>TO-DO LIST (Angular)</h1>
+
+<ul>
+  @for (todo of todos; track todo.id) {
+    <li>
+      <input type="checkbox" [(ngModel)]="todo.done">
+      <input type="text" [(ngModel)]="todo.name">
+      <button (click)="removeTodo($index)">X</button>
+      {{ todo.name }}
+    </li>
+  }
+</ul>
+
+<button (click)="addTodo()">Add To-Do</button>
+<button (click)="add1000Todos()">Add 1000 To-Dos</button>
